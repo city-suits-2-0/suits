@@ -67,16 +67,16 @@ const Login = () => {
                     className="btn btn-blueGray-800 "
                     type="submit"
                     disabled={!validateForm()}
-                    onClick={()=>{location.href="/"}}
+                    onClick={() => { location.href = "/" }}
                   >
                     Login
                   </button>
 
                 </div>
                 <Link href="/register" >
-                <div >
-                  <p className="text-warning">Sign Up</p>
-                </div>
+                  <div >
+                    <p className="text-warning">Sign Up</p>
+                  </div>
                 </Link>
               </div>
             </div>

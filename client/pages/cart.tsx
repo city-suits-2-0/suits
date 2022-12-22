@@ -1,22 +1,22 @@
-import React  from "react";
+import React from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import axios from "axios";
 
-      // @ts-ignore 
-export const getStaticProps=async()=>{
-  const res=await axios.get("http://localhost:4000/api/cart/cart")
+// @ts-ignore 
+export const getStaticProps = async () => {
+  const res = await axios.get("http://localhost:4000/api/cart/cart")
   const data = await res.data
-  
-return {
-  props:{data:data}
-}
+
+  return {
+    props: { data: data }
+  }
 
 }
-const Cart = ({data}:any) => {
+const Cart = ({ data }: any) => {
   console.log(data);
-  
-  
+
+
   return (
     <div>
       <Navbar />
@@ -28,66 +28,68 @@ const Cart = ({data}:any) => {
           <div className="row d-flex justify-content-center my-4">
             <div className="col-md-8">
               <div className="card mb-4">
-               
-          {data.map((e:any) => { return( 
-              
-            <div className="card-body" >
-                  {/* Single item */}
-                  <div className="card-header py-3">
-                  <h5 className="mb-0"><button onClick={()=>{axios.delete(`http://localhost:4000/api/cart/${e._id}`); window.location.reload()}}>  ✖️</button></h5>
-                </div>
-                  <div className="row">
-                    <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                      {/* Image */}
-                      <div 
-                        className="bg-image hover-overlay hover-zoom ripple rounded"
-                        data-mdb-ripple-color="light"
-                      ><span className="close ">{" "}</span>
-                        <img
-                          src={e.articleImage
-                          }
-                          className="w-100"
-                        />
-                        <a href="#!">
-                          <div
-                            className="mask"
-                            style={{
-                              backgroundColor: "rgba(251, 251, 251, 0.2)",
-                            }}
-                          />
-                        </a>
-                      </div>
-                      {/* Image */}
-                    </div>
-                    <div className="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                      {/* Data */}
-                      <p>
-                        <strong>{e.articleName}</strong>
-                      </p>
-                      <p>{e.description}</p>
-                     
 
-                      {/* Data */}
-                    </div>
-                    <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                      {/* Quantity */}
-                      <div className="d-flex mb-4" style={{ maxWidth: 300 }}>
-                        
+                {data.map((e: any) => {
+                  return (
+
+                    <div className="card-body" >
+                      {/* Single item */}
+                      <div className="card-header py-3">
+                        <h5 className="mb-0"><button onClick={() => { axios.delete(`http://localhost:4000/api/cart/${e._id}`); window.location.reload() }}>  ✖️</button></h5>
                       </div>
-                      {/* Quantity */}
-                      {/* Price */}
-                      <p className="text-start text-md-center">
-                        <div className="form-control rounded bg-dark ">
-                          {" "}
-                        {e.price  }  DT
+                      <div className="row">
+                        <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                          {/* Image */}
+                          <div
+                            className="bg-image hover-overlay hover-zoom ripple rounded"
+                            data-mdb-ripple-color="light"
+                          ><span className="close ">{" "}</span>
+                            <img
+                              src={e.articleImage
+                              }
+                              className="w-100"
+                            />
+                            <a href="#!">
+                              <div
+                                className="mask"
+                                style={{
+                                  backgroundColor: "rgba(251, 251, 251, 0.2)",
+                                }}
+                              />
+                            </a>
+                          </div>
+                          {/* Image */}
                         </div>
-                      </p>
-                      {/* Price */}
-                    </div>
-                    
-                  </div>
-                  {/* Single item */}
-                </div>)})}
+                        <div className="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                          {/* Data */}
+                          <p>
+                            <strong>{e.articleName}</strong>
+                          </p>
+                          <p>{e.description}</p>
+
+
+                          {/* Data */}
+                        </div>
+                        <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                          {/* Quantity */}
+                          <div className="d-flex mb-4" style={{ maxWidth: 300 }}>
+
+                          </div>
+                          {/* Quantity */}
+                          {/* Price */}
+                          <p className="text-start text-md-center">
+                            <div className="form-control rounded bg-dark ">
+                              {" "}
+                              {e.price}  DT
+                            </div>
+                          </p>
+                          {/* Price */}
+                        </div>
+
+                      </div>
+                      {/* Single item */}
+                    </div>)
+                })}
               </div>
               <div className="card mb-4">
                 <div className="card-body">
@@ -95,7 +97,7 @@ const Cart = ({data}:any) => {
                     <strong>Expected shipping delivery in 24 hours</strong>
                   </p>
                   <p className="mb-0">
-                   
+
                   </p>
                 </div>
               </div>
