@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-var mongoUri = "mongodb+srv://suits:suits@cluster0.b1h6cft.mongodb.net/test";
+var mongoUri = "mongodb+srv://eya:E&L123456@cluster0.md8t9ep.mongodb.net/test";
 
 // TODO: Connect Mongoose to our local MongoDB via URI specified above and export it below
 var db = mongoose
