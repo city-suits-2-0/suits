@@ -9,7 +9,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/../client/dist"));
-
+app.use("/api/feedback",require('./Routes/feedbackRoutes'))
 app.use("/api/users", require("./Routes/userRoutes"));
 app.use("/api/products", require("./Routes/productRoutes"));
 app.use("/api/cart", cartRoutes)

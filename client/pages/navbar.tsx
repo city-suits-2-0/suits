@@ -21,7 +21,10 @@ const Search = () => {
                                 <a className="nav-link text-dark" href="/suits">Suits</a> </li>
                             <li className="nav-item">
                                 <a className="nav-link text-dark" href="/accessories">Accessories</a> </li>
+                        <li className="nav-item">
+                                <a className="nav-link text-dark" href="/feedback">FeedBack</a> </li>
                         </ul>
+                        
 
                         <div className="input-group rounded w-25 ">
                             <input type="search" className="form-control rounded text-dark " placeholder="Search " aria-label="Search" aria-describedby="search-addon" />
